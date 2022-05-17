@@ -1,10 +1,9 @@
-from numpy import reshape
 import streamlit as st
 from models import decoder_ae, decoder_vae
 from funcs import improve_img, download_image
 import torch
 
-st.set_page_config(page_title='Face Generator', page_icon="🤓", layout="wide")
+st.set_page_config(page_title='Face Generator', page_icon="Logo.png", layout="wide")
 
 @st.cache(show_spinner=True)
 def load_ae_model():
