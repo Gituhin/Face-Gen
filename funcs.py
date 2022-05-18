@@ -13,8 +13,10 @@ def improve_img(image, shape = None, brightness = 1): # image.prop = torch.Tenso
     kernel = brightness*np.array([[0, -1, 0],
                                     [-1, 5, -1],
                                     [0, -1, 0]])
-    image_sharp = cv2.filter2D(src=image, ddepth=-1, kernel=kernel)
-    return image_sharp
+
+    image = cv2.filter2D(src=image, ddepth=-1, kernel=kernel)
+    
+    return image
 
 
 def download_image(image):
