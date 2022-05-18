@@ -27,7 +27,7 @@ model_ae = load_ae_model()
 decoder = decoder_vae
 model_vae = load_vae_model()
 
-st.title("Face Generatior")
+st.title("Face Generator")
 st.subheader("Use this app to generate random and customized fake faces")
 st.markdown("***")
 
