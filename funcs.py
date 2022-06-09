@@ -4,7 +4,6 @@ import cv2
 from io import BytesIO
 from PIL import Image
 
-
 def improve_img(image, shape = None, brightness = 1): # image.prop = torch.Tensor(3, , )
     if shape is not None:
         image = Resize((shape), interpolation=InterpolationMode.BICUBIC)(image)

@@ -27,7 +27,7 @@ model_ae = load_ae_model()
 decoder = decoder_vae
 model_vae = load_vae_model()
 
-st.title("Face Generatior")
+st.title("Face Generator")
 st.subheader("Use this app to generate random and customized fake faces")
 st.markdown("***")
 
@@ -36,24 +36,33 @@ random_face, cust_face = st.columns(2)
 with random_face:
     with st.expander("Random Face Generation", expanded=True):
         st.subheader("Generate Random Image")
+        st.write("\n") #added extra spaces
+        st.write("\n")
+        st.write("\n")
         is_seed = st.checkbox("Use manual seed", value=False)
-        st.markdown(" ")
+        st.write("\n") #added extra spaces
+        st.write("\n")
+        st.write("\n")
         if is_seed:
             st.info("This will generate same random image in every trial")
             seed = st.number_input("Enter seed integer", min_value=0)
             torch.manual_seed(seed)
         
         dist = st.radio("Choose Sampling distribution", ("Standard Normal", "Uniform Continuous"))
-        st.markdown(" ")
+        st.write("\n") #added extra spaces
+        st.write("\n")
+        st.write("\n")
         reshaping = st.selectbox("Select Image Resolution in pixels", (64, 128, 256, 512, 1024),key=65)
-        st.markdown(" ")
+        st.write("\n") #added extra spaces
+        st.write("\n")
+        st.write("\n")
         bright = st.slider("Set brightness level", min_value=0.1, max_value=2.0, step=0.1, value=1.0)
         
         if dist=="Uniform Continuous": input = torch.rand(1, 128)
         else: input = torch.randn(1, 128)
-        st.markdown(" ")
-        st.markdown(" ")
-        st.text('\n\n')
+        st.write("\n") #added extra spaces
+        st.write("\n")
+        st.write("\n")
         if st.button("Generate", key=1):
             if not is_seed:
                 st.info("Click generate again to get new image")
@@ -158,4 +167,4 @@ st.write("To access source code visit Github Repository [Gituhin/Face-Gen](https
 st.write("To know more in details visit [Website/FG](https://sites.google.com/view/tuhinsubhrade/worksprojects/face-generator)")
 st.markdown("***")
 st.text("\n\n")
-st.text("sudo generatef --Gituhin == 2022")
+st.text("sudo generatef --Gituhin == 2022😉")
